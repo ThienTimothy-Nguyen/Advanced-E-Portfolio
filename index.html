@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thien Nguyen's E-Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/96c6b486e5.js" crossorigin="anonymous"></script>
+    <script src="index.js" defer></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "Qn29PBJ08ncd5-xUM",
+        });
+    })();
+    </script>
+</head>
+<body class="">
+    <section id="landing-page" onmousemove="moveBackground(event)">
+        <nav>
+            <figure>
+                <img id="personal-logo" src="./assets/Timmy Nguyen's Logo copy.png" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li onclick="toggleModal()" class="nav__link">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">About</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#projects" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">Projects</a>
+                </li>
+                <li class="nav__link">
+                    <a 
+                        onclick="toggleModal()"
+                        href="#" 
+                        class="
+                        nav__link--anchor
+                        link__hover-effect
+                        link__hover-effect--black">
+                        Contact
+                    </a>
+                </li>
+                <li class="nav__link click">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    "><i class="fa-solid fa-circle-half-stroke" onclick="toggleContrast()" ></i></a>
+                </li>
+            </ul>
+        </nav>
+        <header class="header">
+            <div class="header__content">
+                <h1 class="title">Hey</h1>
+                <h1 class="title blue">I'm Thien</h1>
+                <p class="header__para">
+                    A <b class="blue">Junior Front-end Developer</b> with solid foundation in modern front-end technologies and a focus on building clean, responsive, and friendly interfaces that improve user experiences.
+                    <br>
+                    Here's a bit more <b onclick="toggleModal()" class="blue click link__hover-effect link__hover-effect--blue">about me</b>.
+                </p>
+                <div class="social__list">
+                    <a href="https://www.linkedin.com/in/minh-thien-nguyen-4b923527a" target="_blank" class="social__link click">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/ThienTimothy-Nguyen" target="_blank" class="social__link click">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" target="" class="social__link click no_cursor">
+                        <i class="fa-regular fa-file"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <a href="#">
+            <button class="mail__btn click" onclick="toggleModal()">
+                <i class="fa-solid fa-envelope"></i>
+            </button>
+        </a>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about me</h3>
+                <h4 class="modal__sub-title modal__subtitle--about">Junior Frontend Developer</h4>
+                <p class="modal__para">I'm a 
+                    <b class="blue">junior frontend developer</b> 
+                    with a strong foundation in modern frontend technologies, focused on building 
+                    <b class="blue">responsive interfaces</b> 
+                    that enhance user experiences.
+                    <br>I have hands-on experience solving 
+                    <b class="blue">difficult JavaScript challenges</b> 
+                    and creating 
+                    <b class="blue">advanced CSS effects</b> 
+                    with attention to detail. I can also built 
+                    <b class="blue">Python data structures</b> 
+                    and logic to support frontend-related features and workflows.
+                </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img src="assets/html.svg" class="modal__language--img" alt="">
+                    <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" class="modal__language--img" alt="">
+                    <span class="language__name">CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" class="modal__language--img" alt="">
+                    <span class="language__name">JavaScript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" class="modal__language--img" alt="">
+                    <span class="language__name">React</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="assets/python.svg" class="modal__language--img" alt="">
+                    <span class="language__name">Python</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i> 
+                <h3 class="modal__title modal__title--contact">
+                    Let's have a chat!
+                </h3>
+                <h4 class="modal__sub-title modal__sub-title--contact">
+                    I am currently open to new opportunities.
+                </h4>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label" for="name">Name</label>
+                        <input class="input" name="user_name" type="text"></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label" for="email">Email</label>
+                        <input class="input" name="user_email" type="email"></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label" for="message">Message</label>
+                        <textarea class="input" name="user_message" type="text"></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send it my way</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fa-solid fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! Looking forward to speaking to you soon.
+                </div>
+            </div>
+        </div>
+        <img src="./assets/semi circle.svg" class="shape shape--0">
+        <img src="./assets/circle.svg" class="shape shape--1">
+        <img src="./assets/squiggly.svg" class="shape shape--2">
+        <img src="./assets/circle.svg" class="shape shape--3">
+        <img src="./assets/triangle.svg" class="shape shape--4">
+        <img src="./assets/circle.svg" class="shape shape--5">
+        <img src="./assets/squiggly.svg" class="shape shape--6">
+        <img src="./assets/circle.svg" class="shape shape--7">
+        <img src="./assets/semi circle.svg" class="shape shape--8">
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    Here are some of my <span class="blue">projects</span>
+                </h1>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="assets/For Anilist_img.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    For Anilist Project
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, JavaScript
+                                </h4>
+                                <p class="project__description--para">
+                                    One of my very first project - a frontend anime browsing application integrated with the AniList API, enabling users to explore and search over 20,000 anime titles in a clean, responsive interface.
+                                </p>
+                                <div class="project__description--links">
+                                    <a 
+                                        href="https://github.com/ThienTimothy-Nguyen/API-FOR-ANILIST-PROJECT/deployments/github-pages" 
+                                        target="_blank" class="project__description--link">
+                                            <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="https://thientimothy-nguyen.github.io/API-FOR-ANILIST-PROJECT/" target="_blank" class="project__description--link">
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="assets/netflix clone_img.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Netflix Clone Project
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, JavaScript with React Framework
+                                </h4>
+                                <p class="project__description--para">
+                                    A Netflix clone project using React, featuring a responsive, component-based interface that replicates the look and feel of a modern streaming platform.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/ThienTimothy-Nguyen/Netflix-Clone-Project" target="_blank" class="project__description--link">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="https://thientimothy-nguyen.github.io/Netflix-Clone-Project/" target="_blank" class="project__description--link">
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="assets/shopx_img.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    React Shop Project
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, JavaScript with React Framework
+                                </h4>
+                                <p class="project__description--para">
+                                    A React-based shop application with a responsive UI, reusable components, and an e-commerce-style layout to simulate a modern online shopping experience.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/ThienTimothy-Nguyen/react-shop-project" target="_blank" class="project__description--link">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="https://thientimothy-nguyen.github.io/react-shop-project/" target="_blank" class="project__description--link">
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+                <figure>
+                    <img class="footer__logo--img" src="./assets/Timmy Nguyen's Logo copy.png" alt="">
+                </figure>
+                <div class="footer__social--list">
+                    <a href="https://github.com/ThienTimothy-Nguyen" target="_blank" class="
+                    footer__social--link
+                    link__hover-effect
+                    link__hover-effect--white
+                    ">GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/minh-thien-nguyen-4b923527a" target="_blank" class="
+                    footer__social--link
+                    link__hover-effect
+                    link__hover-effect--white
+                    ">LinkedIn
+                    </a>
+                    <a href="#" onclick="toggleModal()" class="
+                    footer__social--link
+                    link__hover-effect
+                    link__hover-effect--white
+                    ">Contact
+                    </a>
+                    <a href="#" target="" class="
+                    footer__social--link
+                    link__hover-effect
+                    link__hover-effect--white
+                    no_cursor
+                    ">Resume
+                    </a>
+                </div>
+                <div class="footer__copyright">© 2026 Timmy Nguyen</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
